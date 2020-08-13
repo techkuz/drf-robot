@@ -1,6 +1,8 @@
-This project uses Django + Django Rest Framework. They provide an easy and fast way to create efficient and customizable API's. As a deployment service Docker is used.
+Architecture: this project uses Django + Django Rest Framework the latest versions up-do-date. They provide an easy and fast way to create efficient and customizable API's. As a deployment service Docker is used.
 
 
+
+**HOW TO RUN**: 
 
 `$ docker build . -t drf_robot  `
 
@@ -17,14 +19,16 @@ Available requests:
 
 **GET**:
 
-http://0.0.0.0:8000/token/
+- http://0.0.0.0:8000/token/
 
+RESPONSE:
 > {
     "token": "b224693dec64a566abab77dec2c04490b0880d74"
 }
 
-http://0.0.0.0:8000/students?student_id=97125439
+- http://0.0.0.0:8000/students?student_id=97125439
 
+RESPONSE:
 > {
     "first_name": "jack",
     "last_name": "smith",
@@ -34,17 +38,18 @@ http://0.0.0.0:8000/students?student_id=97125439
     "student_average": 55
 }
 
-http://0.0.0.0:8000/students?grade=12
+- http://0.0.0.0:8000/students?grade=12
 
+RESPONSE:
 > {
     "school_grade": 12,
     "num_students": 3,
     "average": 63
 }
 
+- http://0.0.0.0:8000/students?grade=12&stdDev=yes
 
-http://0.0.0.0:8000/students?grade=12&stdDev=yes
-
+RESPONSE:
 > {
     "school_grade": 12,
     "num_students": 3,
@@ -52,8 +57,9 @@ http://0.0.0.0:8000/students?grade=12&stdDev=yes
     "std_dev": 8.5
 }
 
-http://0.0.0.0:8000/students?sorted_last_name=yes
+- http://0.0.0.0:8000/students?sorted_last_name=yes
 
+RESPONSE:
 >[
     {
         "first_name": "jack",
@@ -81,7 +87,9 @@ http://0.0.0.0:8000/students?sorted_last_name=yes
     }
 ]
 
-http://0.0.0.0:8000/students?sorted_age=yes
+- http://0.0.0.0:8000/students?sorted_age=yes
+
+RESPONSE:
 
 > [
     {
@@ -110,7 +118,9 @@ http://0.0.0.0:8000/students?sorted_age=yes
     }
 ]
 
-http://0.0.0.0:8000/students?sorted_grade=yes
+- http://0.0.0.0:8000/students?sorted_grade=yes
+
+RESPONSE:
 
 > [
     {
@@ -139,8 +149,9 @@ http://0.0.0.0:8000/students?sorted_grade=yes
     }
 ]
 
-http://0.0.0.0:8000/students/
+- http://0.0.0.0:8000/students/
 
+RESPONSE:
 > [
     {
         "first_name": "jack",
@@ -171,7 +182,7 @@ http://0.0.0.0:8000/students/
 
 **POST**:
 
-http://0.0.0.0:8000/students/
+- http://0.0.0.0:8000/students/
 
 BODY: 
 > {
@@ -197,8 +208,9 @@ RESPONSE:
 
 **DELETE**:
 
-http://0.0.0.0:8000/students/?student_id=97125420
+- http://0.0.0.0:8000/students/?student_id=97125420
 
+RESPONSE:
 > {
     "first_name": "jack",
     "last_name": "zillin",
@@ -209,8 +221,9 @@ http://0.0.0.0:8000/students/?student_id=97125420
     "deleted_at": "2020-08-13T09:33:34.154"
 }
 
-http://0.0.0.0:8000/students/
+- http://0.0.0.0:8000/students/
 
+RESPONSE:
 > {
     "num_students": 0
 }
