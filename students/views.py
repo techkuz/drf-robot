@@ -77,9 +77,8 @@ def students_view(request):
         return JsonResponse(serializer.errors, status=400)
 
     elif request.method == 'DELETE':
-        request_data = request.data
-        if request_data:
-            student_id = request_data.get('student_id')
+        student_id = request_data.get('student_id')
+        if student_id:
             try:
                 student = Student.objects.get(student_id=student_id)
             except Student.DoesNotExist:
