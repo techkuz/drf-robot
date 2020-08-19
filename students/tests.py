@@ -13,10 +13,6 @@ class StudentAPITestCase(APITestCase):
         self.factory = APIRequestFactory()
         self.user = User.objects.create(username="admin")
 
-    #
-    # def tearDown(self) -> None:
-    #     Student.objects.all().delete()
-
     def test_add_new_student(self):
         student = {
             "first_name": "john",
@@ -46,7 +42,7 @@ class StudentAPITestCase(APITestCase):
         force_authenticate(request, user=self.user)
         response = students_view(request)
 
-        request_del = self.factory.delete('/students/', data=student, format='json')
+        request_del = self.factory.delete('/students?student_id=55175498')
         force_authenticate(request_del, user=self.user)
         response_del = students_view(request_del)
 
