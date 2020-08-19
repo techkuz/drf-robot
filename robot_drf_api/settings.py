@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'students.apps.StudentsConfig',
-    'drf_yasg'
+    'students.apps.StudentsConfig'
 ]
 
 REST_FRAMEWORK = {
